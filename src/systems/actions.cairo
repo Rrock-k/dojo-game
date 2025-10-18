@@ -106,29 +106,15 @@ mod actions {
     }
 
     fn pow(base: u256, exp: u256) -> u256 {
-        // Iterative approach for power of 2
-        if base == 2 {
-            // Use bit shifting for powers of 2
-            let mut result: u256 = 1;
-            let mut i: u256 = 0;
-            loop {
-                if i >= exp {
-                    break result;
-                }
-                result = result * 2;
-                i += 1;
+        // Iterative approach to avoid stack overflow
+        let mut result: u256 = 1;
+        let mut i: u256 = 0;
+        loop {
+            if i >= exp {
+                break result;
             }
-        } else {
-            // General case - iterative
-            let mut result: u256 = 1;
-            let mut i: u256 = 0;
-            loop {
-                if i >= exp {
-                    break result;
-                }
-                result = result * base;
-                i += 1;
-            }
+            result = result * base;
+            i += 1;
         }
     }
 
