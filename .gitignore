@@ -1,0 +1,17 @@
+# Dojo
+target/
+manifest*.json
+overlays/
+
+# macOS
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Build artifacts
+*.lock
