@@ -1,0 +1,54 @@
+[world]
+kind = "WorldContract"
+class_hash = "0x0"
+original_class_hash = "0x0"
+address = "0x0"
+transaction_hash = "0x0"
+block_number = 0
+seed = "dojo_game"
+name = "dojo_game"
+
+[world.metadata]
+name = "Dojo Tic-Tac-Toe Game"
+description = "A simple on-chain Tic-Tac-Toe game built with Dojo"
+cover_uri = "file://metadata/cover.png"
+icon_uri = "file://metadata/icon.png"
+
+# Models
+[[models]]
+kind = "DojoModel"
+class_hash = "0x0"
+original_class_hash = "0x0"
+address = "0x0"
+transaction_hash = "0x0"
+name = "Game"
+members = [
+    { name = "game_id", ty = "u32", key = true },
+    { name = "player_one", ty = "ContractAddress", key = false },
+    { name = "player_two", ty = "ContractAddress", key = false },
+    { name = "winner", ty = "u8", key = false },
+    { name = "current_turn", ty = "u8", key = false },
+    { name = "is_active", ty = "bool", key = false },
+]
+
+[[models]]
+kind = "DojoModel"
+class_hash = "0x0"
+original_class_hash = "0x0"
+address = "0x0"
+transaction_hash = "0x0"
+name = "Board"
+members = [
+    { name = "game_id", ty = "u32", key = true },
+    { name = "cells", ty = "felt252", key = false },
+]
+
+# Contracts
+[[contracts]]
+kind = "DojoContract"
+address = "0x0"
+class_hash = "0x0"
+original_class_hash = "0x0"
+base_class_hash = "0x0"
+transaction_hash = "0x0"
+name = "actions"
