@@ -60,8 +60,7 @@ mod actions {
                 assert(game.current_turn == 2, 'Not your turn');
                 2
             } else {
-                panic!("Not a player in this game");
-                0
+                panic!("Not a player in this game")
             };
 
             // Check if position is empty
@@ -107,10 +106,29 @@ mod actions {
     }
 
     fn pow(base: u256, exp: u256) -> u256 {
-        if exp == 0 {
-            1
+        // Iterative approach for power of 2
+        if base == 2 {
+            // Use bit shifting for powers of 2
+            let mut result: u256 = 1;
+            let mut i: u256 = 0;
+            loop {
+                if i >= exp {
+                    break result;
+                }
+                result = result * 2;
+                i += 1;
+            }
         } else {
-            base * pow(base, exp - 1)
+            // General case - iterative
+            let mut result: u256 = 1;
+            let mut i: u256 = 0;
+            loop {
+                if i >= exp {
+                    break result;
+                }
+                result = result * base;
+                i += 1;
+            }
         }
     }
 
